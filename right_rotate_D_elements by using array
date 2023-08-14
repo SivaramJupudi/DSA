@@ -1,0 +1,33 @@
+#right rotate
+def rotate_D_elem(nums,n,D):
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+       
+        n=len(nums)
+        k=k%n
+        temp=[0]*n
+        for i in range(n-k,n):
+            temp[i-n+k]=nums[i]
+        for i in range(n-k-1,-1,-1):
+            nums[i+k]=nums[i]
+
+        for i in range(0,k):
+            nums[i]=temp[i]
+
+        for i in range(n):
+            print(nums[i])
+
+
+
+
+n=int(input())
+D=int(input())
+arr=[]
+for i in range(n):
+    m=int(input())
+    arr.append(m)
+
+rotate_D_elem(arr,n,D)
+
+
