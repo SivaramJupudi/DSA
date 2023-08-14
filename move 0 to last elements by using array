@@ -1,0 +1,28 @@
+#move 0 elements to last
+def move_0_elem(arr,n):
+    j=-1
+    for i in range(0,n):
+        if(arr[i]==0):
+            j=i
+            break
+
+    if(j==-1):
+        return j
+
+    for i in range(j+1,n):
+        if(arr[i]!=0):
+            temp=arr[i]
+            arr[i]=arr[j]
+            arr[j]=temp
+            j+=1
+
+    for j in range(n):
+        print(arr[j])
+
+n=int(input())
+
+arr=[]
+for i in range(n):
+    m=int(input())
+    arr.append(m)
+move_0_elem(arr,n)
