@@ -1,0 +1,26 @@
+def union(arr1,arr2):
+    s=set()
+    union=[]
+    for num in arr1:
+        s.add(num)
+    for num in arr2:
+        s.add(num)
+
+    for num in s:
+        union.append(s)
+
+
+    print(*union)
+
+n=int(input())
+D=int(input())
+arr1=[]
+arr2=[]
+for i in range(n):
+    m=int(input())
+    arr1.append(m)
+
+for j in range(D):
+    p=int(input())
+    arr2.append(p)
+union(arr1,arr2)
