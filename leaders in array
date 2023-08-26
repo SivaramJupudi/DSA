@@ -1,0 +1,19 @@
+def leaders(n,arr):
+    temp=[]
+    max_element=arr[n-1]
+    temp.append(arr[n-1])
+    for i in range(n-2,-1,-1):
+        if arr[i]>max_element:
+            temp.append(arr[i])
+            max_element=arr[i]
+
+    temp.reverse()
+    return temp
+
+n=int(input())
+arr=[]
+for i in range(n):
+    m=int(input())
+    arr.append(m)
+ans=leaders(n,arr)
+print(ans)
