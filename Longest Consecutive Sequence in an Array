@@ -1,0 +1,23 @@
+def longest_consequence(n,arr):
+    arr.sort()
+    last_smaller=0
+    longest=1
+    cnt=0
+    for i in range(n):
+        if arr[i]-1==last_smaller:
+            cnt+=1
+            last_smaller=arr[i]
+        elif(arr[i]!=last_smaller):
+            cnt=1
+            last_smaller=arr[i]
+        longest=max(longest,cnt)
+    return longest
+n=int(input())
+arr=[]
+for i in range(n):
+    m=int(input())
+    arr.append(m)
+ans= longest_consequence(n,arr)
+print(ans)
+
+
