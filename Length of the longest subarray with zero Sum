@@ -1,0 +1,26 @@
+from typing import List
+def lenghtsum(arr:List[int])->int:
+    mpp={}
+    n=len(arr)
+    maxi=0
+    sum=0
+    for i in range(n):
+        sum+=arr[i]
+        if sum==0:
+            maxi=i+1
+        else:
+            if sum in mpp:
+                maxi=max(maxi,i-mpp[sum])
+            else:
+                mpp[sum]=i
+
+    return maxi
+
+n=int(input())
+
+arr=[]
+for i in range(n):
+    m=int(input())
+    arr.append(m)
+ans=lenghtsum(arr)
+print(ans)
