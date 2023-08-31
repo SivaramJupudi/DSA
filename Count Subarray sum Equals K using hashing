@@ -1,0 +1,24 @@
+#hashing (optimal) approach
+from collections import defaultdict
+def subarrayxor(arr,k):
+    n=len(arr)
+    xr=0
+    cnt=0
+    mpp=defaultdict(int)
+    mpp[xr]=1
+    for i in range(n):
+        xr=xr^arr[i]
+        x=xr^k
+        cnt+=mpp[x]
+        mpp[xr]+=1
+    return cnt
+
+n=int(input())
+arr=[]
+for i in range(n):
+    m=int(input())
+    arr.append(m)
+
+k=int(input())
+ans=subarrayxor(arr,k)
+print(ans)
